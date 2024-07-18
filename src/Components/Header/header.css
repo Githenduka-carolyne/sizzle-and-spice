@@ -1,0 +1,19 @@
+.Header{
+    background-color: grey;
+    padding: 15px;
+}
+.header-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;  
+}
+
+.header-list{
+   list-style: none;
+}
+.header-items{
+    display: flex;
+    flex-direction: row;
+    gap: 2rem;
+    font-size: 20px;
+}
