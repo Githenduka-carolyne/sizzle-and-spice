@@ -5,9 +5,9 @@ import Reviews from './Reviews'
 
 const Home = () => {
   return (
-    <div className='Home-section'>
-      <About />
+    <div className="Home-section">
       <Hero />
+      <About />
       <Reviews />
     </div>
   );
