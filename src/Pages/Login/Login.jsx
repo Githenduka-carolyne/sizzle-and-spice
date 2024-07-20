@@ -24,12 +24,12 @@ function Login() {
 
         if (data.success === true) {
           console.log(data);
-          navigate("/Typeofcars");
+          navigate("/");
         } else {
           setError(data.message);
         }
       } catch (e) {
-        console.log(e.message);
+        console.log(e.message)
         setError(e.message);
       }
     };
@@ -73,15 +73,16 @@ function Login() {
                 onBlur={formik.handleBlur}
                 value={formik.values.password}
               />
-
             </div>
             <button type="submit" className="submit">
               Log In
             </button>
             <div className="account">
-              Don't have an account? <Link to="/Sign up">Signup</Link>
+              Don't have an account? <Link to="/Signup">Sign up</Link>
             </div>
-            <p>{error}</p>
+            <div className="error-info">
+              <p>{error}</p>
+            </div>
           </div>
         </div>
       </div>
