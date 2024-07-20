@@ -63,9 +63,6 @@ const Signup = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.firstName}
                 />
-                {/* {formik.touched.firstName && formik.errors.firstName ? (
-                <div>{formik.errors.firstName}</div>
-              ) : null} */}
               </div>
 
               <div className="form-details">
@@ -79,10 +76,6 @@ const Signup = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.lastName}
                 />
-
-                {/* {formik.touched.lastName && formik.errors.lastName ? (
-                <div>{formik.errors.lastName}</div>
-              ) : null} */}
               </div>
 
               <div className="form-details">
@@ -96,10 +89,6 @@ const Signup = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.emailAddress}
                 />
-
-                {/* {formik.touched.emailAddress && formik.errors.emailAddress ? (
-                <div>{formik.errors.emailAddress}</div>
-              ) : null} */}
               </div>
 
               <div className="form-details">
@@ -113,10 +102,6 @@ const Signup = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.phoneNumber}
                 />
-
-                {/* {formik.touched.phoneNumber && formik.errors.phoneNumber ? (
-                <div>{formik.errors.phoneNumber}</div>
-              ) : null} */}
               </div>
 
               <div className="form-details">
@@ -130,18 +115,17 @@ const Signup = () => {
                   onBlur={formik.handleBlur}
                   value={formik.values.password}
                 />
-
-                {/* {formik.touched.password && formik.errors.password ? (
-                <div>{formik.errors.password}</div>
-              ) : null} */}
               </div>
+
               <button type="submit" className="submit">
                 Log In
               </button>
               <div className="account">
                 Have an account? <Link to="/Login">Log in</Link>
               </div>
-              <p>{error}</p>
+              <div className="error-info">
+                <p>{error}</p>
+              </div>
             </div>
           </div>
         </div>
