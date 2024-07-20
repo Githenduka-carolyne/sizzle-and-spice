@@ -12,13 +12,15 @@ const Header = () => {
           <div className="header-list">
             <ol className="header-items">
               <li className="header-items">
-              Home
+                <Link to="/">Home</Link>
+                
               </li>
               <li className="header-items">
-                Menu
+                <Link to="/menu">Menu</Link>
+                
               </li>
               <li className="header-items">
-                Contacts
+                <Link to="/contacts">Contacts</Link>
               </li>
             </ol>
           </div>
