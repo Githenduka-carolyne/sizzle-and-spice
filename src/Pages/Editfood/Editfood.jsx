@@ -4,9 +4,9 @@ import { useFormik } from "formik";
 import "../Signup/signup.css";
 
 const Editfood = () => {
-  const { id } = useParams(); // Get the food item ID from the URL
+  const { id } = useParams(); 
   const navigate = useNavigate();
-  const [food, setFood] = useState({ type: "", price: "" });
+  const [food, setFood] = useState({ type: "", price: "", category: "" });
 
   useEffect(() => {
     const fetchFood = async () => {
@@ -15,7 +15,7 @@ const Editfood = () => {
           `http://localhost:3000/api/menu/foods/${id}`
         );
         const data = await response.json();
-        setFood(data.menu); // Assuming data.menu is the food item
+        setFood(data.menu);
       } catch (error) {
         console.error("Error fetching food:", error);
       }
@@ -28,8 +28,9 @@ const Editfood = () => {
     initialValues: {
       type: food.type,
       price: food.price,
+      category: food.category
     },
-    enableReinitialize: true, // This will update the form values when `food` state changes
+    enableReinitialize: true, 
     onSubmit: async (values) => {
       try {
         const response = await fetch(
@@ -43,7 +44,7 @@ const Editfood = () => {
           }
         );
         if (response.ok) {
-          navigate("/Admin"); // Redirect to admin page after successful update
+          navigate("/Admin"); 
         } else {
           console.error("Failed to update:", response.statusText);
         }
@@ -85,6 +86,20 @@ const Editfood = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.price}
+                />
+              </div>
+            </div>
+
+            <div className="form-details">
+              <label htmlFor="category">Category</label>
+              <div className="input-div">
+                <input
+                  id="category"
+                  name="category"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.category}
                 />
               </div>
             </div>
