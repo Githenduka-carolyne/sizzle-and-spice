@@ -8,8 +8,11 @@ function Hero() {
         <h2 className="hero-maintitle">Welcome to sizzle & spice</h2>
         <p className="hero-subtitle">"Fast. Fresh. Flavorful." </p>
         <div className="button-holder">
-          <Link to="/About">
-            <button className="button">Learn More</button>
+          <Link to="/Signup">
+            <button className="button">Sign up</button>
+          </Link>
+          <Link to="/Login">
+            <button className="button">Log in</button>
           </Link>
         </div>
       </div>
