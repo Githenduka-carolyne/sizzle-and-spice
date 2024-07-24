@@ -1,5 +1,9 @@
 .admin-button{
     padding: 0 4.7rem;
+    display: flex;
+    flex-direction: row;
+    place-content: center;
+    gap: 2rem;
 }
 
 .button {
@@ -23,7 +27,7 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.8);
     background-color: #D9D9D9;
     width: 200px;
-    height: 160px;
+    height: 200px;
     font-size: 10px;
     color: #000;
     line-height: 1.5;

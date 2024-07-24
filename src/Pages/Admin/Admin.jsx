@@ -7,14 +7,14 @@ const Admin = () => {
   const [foods, setFoods] = useState([]);
 
   useEffect(() => {
-    fetchData(); // Fetch data when component mounts
+    fetchData(); 
   }, []);
 
   const fetchData = async () => {
     try {
       const response = await fetch("http://localhost:3000/api/menu/foods");
       const data = await response.json();
-      setFoods(data.menu); // Assuming data.menu is an array of food items
+      setFoods(data.menu); 
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -54,6 +54,24 @@ const Admin = () => {
         >
           Add new item
         </button>
+
+        <button
+          className="button"
+          onClick={() => {
+            navigate("/Order");
+          }}
+        >
+          View Orders
+        </button>
+
+        <button
+          className="button"
+          onClick={() => {
+            navigate("/Booked");
+          }}
+        >
+          View Bookings
+        </button>
       </div>
       <div className="group1-container">
         {foods.map((food, index) => (
@@ -64,6 +82,7 @@ const Admin = () => {
               </div>
               <div className="food-button">
                 <p>Ksh {food.price}</p>
+                <p>{food.category}</p>
                 <div className="delete-edit-buttons">
                   <button
                     className="delbutton"
