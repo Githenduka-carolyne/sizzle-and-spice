@@ -8,6 +8,8 @@ import Login from "./Pages/Login/Login";
 import Admin from "./Pages/Admin/Admin";
 import Addfood from "./Pages/Addfood/Addfood";
 import Editfood from "./Pages/Editfood/Editfood";
+import Order from "./Pages/Orders/Orders";
+import Booked from "./Pages/Booked/Booked";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 function App() {
  
@@ -23,6 +25,8 @@ function App() {
           <Route path="/Login" element={<Login />} />
           <Route path="/Admin" element={<Admin />} />
           <Route path="/Addfood" element={<Addfood />} />
+          <Route path="/Order" element={<Order />} />
+          <Route path="/Booked" element={<Booked />} />
           <Route path="/Editfood/:id" element={<Editfood />} />
         </Routes>
       </BrowserRouter>
