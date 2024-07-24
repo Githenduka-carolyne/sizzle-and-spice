@@ -1,8 +1,10 @@
 import React from "react";
 import { useFormik } from "formik";
 import "../Signup/signup.css";
+import { useNavigate } from "react-router-dom";
 
 const Addfood = () => {
+ 
   const addFoodToDatabase = async (food) => {
     try {
       const response = await fetch("http://localhost:3000/api/menu/foods", {
@@ -13,6 +15,7 @@ const Addfood = () => {
         body: JSON.stringify({
           type: food.type,
           price: parseInt(food.price, 10),
+          category:food.category
         }),
       });
 
@@ -21,8 +24,9 @@ const Addfood = () => {
       if (data.success && data.menu) {
         console.log("Food added successfully:", data.menu);
         alert(
-          `Food added successfully:\nTitle: ${data.menu.type}\nPrice: ${data.menu.price}`
+          `Food added successfully:\nTitle: ${data.menu.type}\nPrice: ${data.menu.price} \nCategory: ${data.menu.category}`
         );
+        
       } else {
         console.log("Error adding food:", data.message);
         alert(`Error adding food: ${data.message}`);
@@ -46,6 +50,7 @@ const Addfood = () => {
     initialValues: {
       type: "",
       price: "",
+      category: ""
     },
 
     onSubmit: handleSubmit,
@@ -83,6 +88,20 @@ const Addfood = () => {
                   onChange={formik.handleChange}
                   onBlur={formik.handleBlur}
                   value={formik.values.price}
+                />
+              </div>
+            </div>
+
+            <div className="form-details">
+              <label htmlFor="category">Category</label>
+              <div className="input-div">
+                <input
+                  id="category"
+                  name="category"
+                  type="text"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.category}
                 />
               </div>
             </div>
